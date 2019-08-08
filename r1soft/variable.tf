@@ -9,3 +9,4 @@ variable "user" {}
 variable "zone_id" {}
 variable "domain" {}
 variable "record" {}
+variable "key_name" {}
