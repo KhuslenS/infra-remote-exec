@@ -1,0 +1,6 @@
+output "domain"
+  value = "${var.record}.${var.domain}"
+output "username"
+  value = "${var.user}"
+output "IP"
+  value = "${aws_instance.jenkins.id}"
