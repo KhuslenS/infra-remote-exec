@@ -1,2 +1,2 @@
 output "domain"
-  value = "http://${aws_route53_record.name}:8080"
+  value = "${aws_route53_record.jenkins.name}:8080"
