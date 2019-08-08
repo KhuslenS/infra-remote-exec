@@ -1,3 +1,3 @@
 output "domain" {
-  value = "${aws_route53_record.r1soft.name}:8443"
+  value = "${aws_route53_record.example.name}:8443"
 }

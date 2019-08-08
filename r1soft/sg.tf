@@ -1,4 +1,4 @@
-resource "aws_security_group" "r1soft" {
+resource "aws_security_group" "example" {
   name        = "public"
   description = "Allow inbound traffic"
   vpc_id      = "${var.vpc}"
@@ -6,8 +6,8 @@ resource "aws_security_group" "r1soft" {
 
   ingress {
 
-    from_port   = 8443
-    to_port     = 8443
+    from_port   = 0
+    to_port     = 0
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -28,7 +28,7 @@ resource "aws_security_group" "r1soft" {
   }
 
   tags = {
-    Name      = "${var.Name}.r1soft"
+    Name      = "${var.Name}.example"
     Env       = "${var.Env}"
     Create_by = "${var.Created_by}"
     Dept      = "${var.Dept}"
