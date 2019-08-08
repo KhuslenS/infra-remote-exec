@@ -1,7 +1,7 @@
 resource "aws_instance" "jenkins" {
   ami                         = "${var.ami}"
   instance_type               = "${var.instance_type}"
-  key_name                    = "${aws_key_pair.developer_key.id}"
+  key_name                    = "${var.key_name}"
   associate_public_ip_address = "true"
   security_groups             = ["${aws_security_group.r1soft.name}"]
 
@@ -13,12 +13,7 @@ resource "aws_instance" "jenkins" {
       private_key = "${file("~/.ssh/id_rsa")}"
     }
     inline = [
-      "sudo yum install java-1.8.0-openjdk-devel -y",
-      "curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo",
-      "sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key",
-      "sudo yum install jenkins -y",
-      "sudo systemctl start jenkins",
-      "sudo systemctl enable jenkins",
+      "",
     ]
 
 
