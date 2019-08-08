@@ -1,7 +1,7 @@
 resource "aws_instance" "jenkins" {
   ami                         = "${var.ami}"
   instance_type               = "{var.instance_type}"
-  key_name                    = "${aws_key_pair.develop_key.id}"
+  key_name                    = "${aws_key_pair.developer_key}"
   associate_public_ip_address = "true"
   security_groups             = ["${aws_security_group.jenkins.id}"]
 
