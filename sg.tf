@@ -25,8 +25,9 @@ resource "aws_security_group" "jenkins" {
     to_port     = 22
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
+  }
 
-    tags = {
+  tags = {
     Name      = "${var.Name}.jenkins"
     Env       = "${var.Env}"
     Create_by = "${var.Created_by}"
